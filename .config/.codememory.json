@@ -1,0 +1,10 @@
+{
+  "database-pack": {
+    "defaultHost": "localhost",
+    "defaultUsername": "root",
+    "defaultPassword": "",
+    "defaultDbname": "mysql",
+    "defaultDriver": "Codememory\\Components\\Database\\Connection\\Drivers\\MySQLDriver",
+    "configName": "database"
+  }
+}

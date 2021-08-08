@@ -1,0 +1,33 @@
+{
+    "name": "codememory/database-pack",
+    "description": "database pack",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danil",
+            "email": "kostynd1@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Codememory\\Components\\Database\\Pack\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3"
+    },
+    "require": {
+        "codememory/config": "^1.1",
+        "codememory/console": "^1.0",
+        "codememory/database-connection": "^1.0",
+        "codememory/fs": "^1.1",
+        "codememory/global-config": "^1.1",
+        "codememory/markup": "^2.0",
+        "codememory/migrations": "1.0-alpha",
+        "codememory/orm": "^1.0",
+        "symfony/console": "^5.3"
+    }
+}
