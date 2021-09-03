@@ -2,17 +2,10 @@
 
 namespace Codememory\Components\Database\Pack;
 
-use Codememory\Components\Caching\Exceptions\ConfigPathNotExistException;
-use Codememory\Components\Configuration\Config;
-use Codememory\Components\Configuration\Exceptions\ConfigNotFoundException;
+use Codememory\Components\Configuration\Configuration;
 use Codememory\Components\Configuration\Interfaces\ConfigInterface;
 use Codememory\Components\Database\Connection\Interfaces\DriverInterface;
-use Codememory\Components\Environment\Exceptions\EnvironmentVariableNotFoundException;
-use Codememory\Components\Environment\Exceptions\IncorrectPathToEnviException;
-use Codememory\Components\Environment\Exceptions\ParsingErrorException;
-use Codememory\Components\Environment\Exceptions\VariableParsingErrorException;
 use Codememory\Components\GlobalConfig\GlobalConfig;
-use Codememory\FileSystem\File;
 use JetBrains\PhpStorm\ArrayShape;
 
 /**
@@ -31,19 +24,12 @@ class Utils
     private ConfigInterface $config;
 
     /**
-     * @throws ConfigPathNotExistException
-     * @throws ConfigNotFoundException
-     * @throws EnvironmentVariableNotFoundException
-     * @throws IncorrectPathToEnviException
-     * @throws ParsingErrorException
-     * @throws VariableParsingErrorException
+     * Utils Construct.
      */
     public function __construct()
     {
 
-        $config = new Config(new File());
-
-        $this->config = $config->open(GlobalConfig::get('database-pack.configName'));
+        $this->config = Configuration::getInstance()->open(GlobalConfig::get('database-pack.configName'));
 
     }
 
