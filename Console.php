@@ -100,4 +100,18 @@ class Console
 
     }
 
+    /**
+     * =>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+     * Returns the database connection worker
+     * <=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=
+     *
+     * @return ConnectionWorker
+     */
+    public function getConnectionWorker(): ConnectionWorker
+    {
+
+        return $this->connectionWorker;
+
+    }
+
 }
