@@ -36,6 +36,11 @@ class Console
     private Application $app;
 
     /**
+     * @var DatabasePack
+     */
+    private DatabasePack $databasePack;
+
+    /**
      * @var ConnectionWorker
      */
     private ConnectionWorker $connectionWorker;
@@ -48,7 +53,8 @@ class Console
     {
 
         $this->app = $application;
-        $this->connectionWorker = new ConnectionWorker($connection);
+        $this->databasePack = new DatabasePack($connection);
+        $this->connectionWorker = $this->databasePack->getConnectionWorker();
 
     }
 
@@ -97,6 +103,20 @@ class Console
     {
 
         $this->app->add(new $commandNamespace($this->connectionWorker->getConnector(), $this->connectionWorker->getConnection()));
+
+    }
+
+    /**
+     * =>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+     * Returns the DatabasePack object
+     * <=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=
+     * 
+     * @return DatabasePack
+     */
+    public function getDatabasePack(): DatabasePack
+    {
+
+        return $this->databasePack;
 
     }
 
